@@ -183,6 +183,7 @@ design-skill/
 ├── 📄 README.pt.md                 ← você está aqui
 ├── 📄 README.en.md                 ← versão em inglês
 ├── 📄 LICENSE                      ← MIT
+├── 📄 SECURITY.md                  ← como relatar problemas de segurança
 │
 ├── 📦 design-pt.skill              ← pacote pronto para instalar (PT-BR)
 ├── 📦 design-en.skill              ← pacote pronto para instalar (EN)
@@ -414,7 +415,15 @@ Modelo para você preencher. Veja [Deixe a skill ainda mais poderosa](#-deixe-a-
 
 ## 🤝 Contribuindo
 
-Sugestões, correções e novos frameworks são bem-vindos. Abra uma **issue** ou mande um **pull request**. Se mudar o conteúdo de uma versão, lembre de refletir a mudança na outra (`design-pt` ↔ `design-en`) e de gerar de novo o `.skill` correspondente.
+Sugestões, correções e novos frameworks são bem-vindos. Abra uma **issue** ou mande um **pull request**. Se mudar o conteúdo de uma versão, lembre de refletir a mudança na outra (`design-pt` ↔ `design-en`).
+
+> ⚠️ **Não altere os arquivos `.skill` no seu PR.** Mude só as pastas `design-pt/` e `design-en/`. Os pacotes `.skill` são gerados pelo mantenedor, porque são binários e não aparecem no diff. Uma verificação automática recusa qualquer `.skill` diferente da pasta correspondente.
+
+---
+
+## 🔒 Segurança
+
+Encontrou algo suspeito, como instruções que façam o Claude agir contra o usuário ou um `.skill` diferente da pasta? **Não abra uma issue pública.** Relate em privado, como explicado no [SECURITY.md](SECURITY.md).
 
 ---
 

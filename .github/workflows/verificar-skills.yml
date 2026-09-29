@@ -1,0 +1,41 @@
+name: Verificar pacotes .skill
+
+# Garante que cada .skill tem exatamente o mesmo conteúdo da pasta correspondente.
+# Ensures each .skill has exactly the same content as its matching folder.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Comparar .skill com as pastas
+        run: |
+          set -euo pipefail
+          falhou=0
+          for pacote in design-pt design-en; do
+            tmp="$(mktemp -d)"
+            unzip -q "$pacote.skill" -d "$tmp"
+            if diff -r "$tmp/$pacote" "$pacote"; then
+              echo "✅ $pacote.skill confere com $pacote/"
+            else
+              echo "::error file=$pacote.skill::$pacote.skill é diferente da pasta $pacote/. Gere o pacote de novo a partir da pasta."
+              falhou=1
+            fi
+            extras="$(ls -A "$tmp" | grep -vx "$pacote" || true)"
+            if [ -n "$extras" ]; then
+              echo "::error file=$pacote.skill::$pacote.skill contém arquivos fora da pasta $pacote/: $extras"
+              falhou=1
+            fi
+          done
+          exit $falhou

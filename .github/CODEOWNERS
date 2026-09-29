@@ -1,0 +1,9 @@
+# Toda mudança no repositório pede revisão do mantenedor.
+# Every change in the repository requests the maintainer's review.
+* @guilhermedworakowski
+
+# Pacotes .skill são binários (zip) e não aparecem no diff do PR.
+# Só o mantenedor gera esses arquivos, a partir das pastas.
+# .skill packages are binary (zip) and don't show up in PR diffs.
+# Only the maintainer builds them, from the folders.
+*.skill @guilhermedworakowski
