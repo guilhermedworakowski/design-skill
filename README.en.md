@@ -183,6 +183,7 @@ design-skill/
 ├── 📄 README.en.md                 ← you are here
 ├── 📄 README.pt.md                 ← Portuguese version
 ├── 📄 LICENSE                      ← MIT
+├── 📄 SECURITY.md                  ← how to report security issues
 │
 ├── 📦 design-en.skill              ← ready-to-install package (EN)
 ├── 📦 design-pt.skill              ← ready-to-install package (PT-BR)
@@ -414,7 +415,15 @@ A template for you to fill in. See [Make the skill even more powerful](#-make-th
 
 ## 🤝 Contributing
 
-Suggestions, fixes and new frameworks are welcome. Open an **issue** or send a **pull request**. If you change one version's content, remember to mirror the change in the other (`design-en` ↔ `design-pt`) and rebuild the matching `.skill` file.
+Suggestions, fixes and new frameworks are welcome. Open an **issue** or send a **pull request**. If you change one version's content, remember to mirror the change in the other (`design-en` ↔ `design-pt`).
+
+> ⚠️ **Don't change the `.skill` files in your PR.** Only change the `design-en/` and `design-pt/` folders. The maintainer builds the `.skill` packages, because they're binary and don't show up in the diff. An automated check rejects any `.skill` that differs from its matching folder.
+
+---
+
+## 🔒 Security
+
+Found something suspicious, like instructions that make Claude act against the user or a `.skill` that differs from its folder? **Don't open a public issue.** Report it privately, as explained in [SECURITY.md](SECURITY.md).
 
 ---
 
