@@ -2,8 +2,6 @@
 # Every change in the repository requests the maintainer's review.
 * @guilhermedworakowski
 
-# Pacotes .skill são binários (zip) e não aparecem no diff do PR.
-# Só o mantenedor gera esses arquivos, a partir das pastas.
-# .skill packages are binary (zip) and don't show up in PR diffs.
-# Only the maintainer builds them, from the folders.
-*.skill @guilhermedworakowski
+# Workflows publicam as Releases que os usuários instalam: revisão obrigatória do mantenedor.
+# Workflows publish the Releases users install: the maintainer must review them.
+/.github/ @guilhermedworakowski
