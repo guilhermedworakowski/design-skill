@@ -284,13 +284,16 @@ Just write normally. The skill figures out the agent on its own.
 With an empty `patterns.md`, the skill still works well, but it uses generic tokens (e.g. `color-action-primary`, `spacing-md`) and **flags which patterns still need defining**. Once it's filled in, **every screen, flow and piece of copy comes out looking and sounding like your brand**, because the agents treat this file as the source of truth.
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph BEFORE["❌ Empty patterns.md"]
+        direction LR
         A1["Generic tokens"] --> A2["Neutral tone of voice"] --> A3["You adapt it<br/>afterwards"]
     end
     subgraph AFTER["✅ Filled-in patterns.md"]
+        direction LR
         B1["Brand tokens"] --> B2["Brand tone of voice"] --> B3["Ready-to-use<br/>deliverable"]
     end
+    BEFORE ~~~ AFTER
 ```
 
 ### 📝 What to fill in
