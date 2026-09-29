@@ -185,9 +185,6 @@ design-skill/
 ├── 📄 LICENSE                      ← MIT
 ├── 📂 .github/                     ← configurações do GitHub: SECURITY.md, CODEOWNERS e workflows
 │
-├── 📦 design-pt.skill              ← pacote pronto para instalar (PT-BR)
-├── 📦 design-en.skill              ← pacote pronto para instalar (EN)
-│
 ├── 📂 design-pt/                   ← conteúdo completo da skill em português
 │   ├── SKILL.md                    ← orquestrador
 │   ├── agents/
@@ -204,7 +201,7 @@ design-skill/
 └── 📂 design-en/                   ← mesma estrutura, em inglês
 ```
 
-> 💡 Os arquivos `.skill` são as pastas `design-pt/` e `design-en/` compactadas em `.zip`. Use o `.skill` para instalar rápido e as pastas para ler ou editar o conteúdo.
+> 💡 **E os arquivos `.skill`?** São as pastas `design-pt/` e `design-en/` compactadas em `.zip`, no formato que o Claude.ai aceita. Eles não ficam no repositório: são gerados automaticamente a partir das pastas e publicados na página de **[Releases](https://github.com/guilhermedworakowski/design-skill/releases)** a cada nova versão. Assim as pastas são a única fonte da verdade.
 
 ---
 
@@ -218,7 +215,7 @@ design-skill/
 
 ### Opção A: Claude.ai ou Claude Desktop
 
-1. Baixe o arquivo **[`design-pt.skill`](design-pt.skill)** ou **[`design-en.skill`](design-en.skill)** deste repositório (abra o arquivo e clique em **Download raw file**).
+1. Baixe **[`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill)** ou **[`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill)**. Os links sempre apontam para a versão mais recente. As anteriores ficam na página de **[Releases](https://github.com/guilhermedworakowski/design-skill/releases)**.
 2. No Claude, vá em **Configurações → Capacidades** e confirme que **Execução de código e criação de arquivos** está ativada (as skills precisam disso).
 3. Na seção **Skills**, clique em **Carregar skill** e selecione o arquivo `.skill`.
 4. Confirme que a skill aparece na lista e está ativada.
@@ -428,13 +425,19 @@ Sugestões, correções e novos frameworks são bem-vindos. Abra uma **issue** o
 | `chore` | Manutenção que não muda a skill | `chore: atualiza CODEOWNERS` |
 | `refactor` | Reorganiza sem mudar o comportamento | `refactor(references): divide frameworks.md por agente` |
 
-> ⚠️ **Não altere os arquivos `.skill` no seu PR.** Mude só as pastas `design-pt/` e `design-en/`. Os pacotes `.skill` são gerados pelo mantenedor, porque são binários e não aparecem no diff. Uma verificação automática recusa qualquer `.skill` diferente da pasta correspondente.
+> ⚠️ **Não adicione arquivos `.skill` ou `.zip` no seu PR.** Mude só as pastas `design-pt/` e `design-en/`, sempre nas duas. Uma verificação automática recusa pacotes commitados e confere se as duas versões têm os mesmos arquivos.
+
+**Publicar uma versão nova (mantenedor):** depois do merge na `main`, crie uma tag seguindo o [versionamento semântico](https://semver.org/lang/pt-BR/). Use `fix` para subir o último número (`v1.0.1`) e `feat` para subir o do meio (`v1.1.0`). O workflow gera os `.skill`, o `SHA256SUMS.txt` e publica a Release sozinho.
+
+```bash
+git tag v1.1.0 && git push origin v1.1.0
+```
 
 ---
 
 ## 🔒 Segurança
 
-Encontrou algo suspeito, como instruções que façam o Claude agir contra o usuário ou um `.skill` diferente da pasta? **Não abra uma issue pública.** Relate em privado, como explicado no [SECURITY.md](.github/SECURITY.md).
+Encontrou algo suspeito, como instruções que façam o Claude agir contra o usuário ou um `.skill` da Release diferente da pasta? **Não abra uma issue pública.** Relate em privado, como explicado no [SECURITY.md](.github/SECURITY.md).
 
 ---
 
