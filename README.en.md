@@ -340,7 +340,7 @@ cd design-skill && zip -r design-en.skill design-en
 
 Then, in **Settings → Capabilities → Skills**, remove the old version and upload the new `design-en.skill`.
 
-> 🔒 **Tip:** if your company's patterns are confidential, create a **private fork** of this repository before filling in `patterns.md`.
+> 🔒 **Confidential patterns? Don't publish your filled-in `patterns.md`.** On GitHub, a fork of a public repository is **always public**. Keep the edited file on your computer only, or make a private copy: click **Use this template → Create a new repository** at the top of this repository and pick **Private**. The copy is independent, and no one outside can see what you fill in.
 
 ---
 
