@@ -36,4 +36,5 @@ jobs:
           TAG: ${{ github.ref_name }}
         run: |
           gh release create "$TAG" design-pt.skill design-en.skill SHA256SUMS.txt \
-            --repo "$GITHUB_REPOSITORY" --title "$TAG" --generate-notes --verify-tag
+            --repo "$GITHUB_REPOSITORY" --title "$TAG" --verify-tag \
+            --notes-file .github/release-notes.md --generate-notes
