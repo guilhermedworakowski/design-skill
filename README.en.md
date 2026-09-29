@@ -185,9 +185,6 @@ design-skill/
 ├── 📄 LICENSE                      ← MIT
 ├── 📂 .github/                     ← GitHub settings: SECURITY.md, CODEOWNERS and workflows
 │
-├── 📦 design-en.skill              ← ready-to-install package (EN)
-├── 📦 design-pt.skill              ← ready-to-install package (PT-BR)
-│
 ├── 📂 design-en/                   ← full skill content in English
 │   ├── SKILL.md                    ← orchestrator
 │   ├── agents/
@@ -204,7 +201,7 @@ design-skill/
 └── 📂 design-pt/                   ← same structure, in Portuguese
 ```
 
-> 💡 The `.skill` files are the `design-en/` and `design-pt/` folders zipped. Use the `.skill` file for a quick install and the folders to read or edit the content.
+> 💡 **What about the `.skill` files?** They're the `design-en/` and `design-pt/` folders zipped, in the format Claude.ai accepts. They don't live in the repository: they're built automatically from the folders and published on the **[Releases](https://github.com/guilhermedworakowski/design-skill/releases)** page for every new version. That keeps the folders as the single source of truth.
 
 ---
 
@@ -218,7 +215,7 @@ design-skill/
 
 ### Option A: Claude.ai or Claude Desktop
 
-1. Download **[`design-en.skill`](design-en.skill)** or **[`design-pt.skill`](design-pt.skill)** from this repository (open the file and click **Download raw file**).
+1. Download **[`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill)** or **[`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill)**. The links always point to the latest version. Older ones are on the **[Releases](https://github.com/guilhermedworakowski/design-skill/releases)** page.
 2. In Claude, go to **Settings → Capabilities** and make sure **Code execution and file creation** is turned on (skills need it).
 3. In the **Skills** section, click **Upload skill** and pick the `.skill` file.
 4. Check that the skill shows up in the list and is turned on.
@@ -428,13 +425,19 @@ Suggestions, fixes and new frameworks are welcome. Open an **issue** or send a *
 | `chore` | Maintenance that doesn't change the skill | `chore: update CODEOWNERS` |
 | `refactor` | Reorganizes without changing behavior | `refactor(references): split frameworks.md by agent` |
 
-> ⚠️ **Don't change the `.skill` files in your PR.** Only change the `design-en/` and `design-pt/` folders. The maintainer builds the `.skill` packages, because they're binary and don't show up in the diff. An automated check rejects any `.skill` that differs from its matching folder.
+> ⚠️ **Don't add `.skill` or `.zip` files to your PR.** Only change the `design-en/` and `design-pt/` folders, always both. An automated check rejects committed packages and confirms both versions have the same files.
+
+**Publishing a new version (maintainer):** after merging into `main`, create a tag following [semantic versioning](https://semver.org/). Use `fix` to bump the last number (`v1.0.1`) and `feat` to bump the middle one (`v1.1.0`). The workflow builds the `.skill` files and `SHA256SUMS.txt` and publishes the Release on its own.
+
+```bash
+git tag v1.1.0 && git push origin v1.1.0
+```
 
 ---
 
 ## 🔒 Security
 
-Found something suspicious, like instructions that make Claude act against the user or a `.skill` that differs from its folder? **Don't open a public issue.** Report it privately, as explained in [SECURITY.md](.github/SECURITY.md).
+Found something suspicious, like instructions that make Claude act against the user or a Release `.skill` that differs from its folder? **Don't open a public issue.** Report it privately, as explained in [SECURITY.md](.github/SECURITY.md).
 
 ---
 
