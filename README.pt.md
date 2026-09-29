@@ -183,7 +183,7 @@ design-skill/
 ├── 📄 README.pt.md                 ← você está aqui
 ├── 📄 README.en.md                 ← versão em inglês
 ├── 📄 LICENSE                      ← MIT
-├── 📄 SECURITY.md                  ← como relatar problemas de segurança
+├── 📂 .github/                     ← configurações do GitHub: SECURITY.md, CODEOWNERS e workflows
 │
 ├── 📦 design-pt.skill              ← pacote pronto para instalar (PT-BR)
 ├── 📦 design-en.skill              ← pacote pronto para instalar (EN)
@@ -423,7 +423,7 @@ Sugestões, correções e novos frameworks são bem-vindos. Abra uma **issue** o
 
 ## 🔒 Segurança
 
-Encontrou algo suspeito, como instruções que façam o Claude agir contra o usuário ou um `.skill` diferente da pasta? **Não abra uma issue pública.** Relate em privado, como explicado no [SECURITY.md](SECURITY.md).
+Encontrou algo suspeito, como instruções que façam o Claude agir contra o usuário ou um `.skill` diferente da pasta? **Não abra uma issue pública.** Relate em privado, como explicado no [SECURITY.md](.github/SECURITY.md).
 
 ---
 

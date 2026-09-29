@@ -183,7 +183,7 @@ design-skill/
 ├── 📄 README.en.md                 ← you are here
 ├── 📄 README.pt.md                 ← Portuguese version
 ├── 📄 LICENSE                      ← MIT
-├── 📄 SECURITY.md                  ← how to report security issues
+├── 📂 .github/                     ← GitHub settings: SECURITY.md, CODEOWNERS and workflows
 │
 ├── 📦 design-en.skill              ← ready-to-install package (EN)
 ├── 📦 design-pt.skill              ← ready-to-install package (PT-BR)
@@ -423,7 +423,7 @@ Suggestions, fixes and new frameworks are welcome. Open an **issue** or send a *
 
 ## 🔒 Security
 
-Found something suspicious, like instructions that make Claude act against the user or a `.skill` that differs from its folder? **Don't open a public issue.** Report it privately, as explained in [SECURITY.md](SECURITY.md).
+Found something suspicious, like instructions that make Claude act against the user or a `.skill` that differs from its folder? **Don't open a public issue.** Report it privately, as explained in [SECURITY.md](.github/SECURITY.md).
 
 ---
 
