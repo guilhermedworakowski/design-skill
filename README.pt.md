@@ -340,7 +340,7 @@ cd design-skill && zip -r design-pt.skill design-pt
 
 Depois, em **Configurações → Capacidades → Skills**, remova a versão antiga e carregue o novo `design-pt.skill`.
 
-> 🔒 **Dica:** se os padrões da sua empresa forem confidenciais, faça um **fork privado** deste repositório antes de preencher o `patterns.md`.
+> 🔒 **Padrões confidenciais? Não publique o seu `patterns.md` preenchido.** No GitHub, um fork de repositório público é **sempre público**. Guarde o arquivo editado só no seu computador ou crie uma cópia privada: clique em **Use this template → Create a new repository** no topo deste repositório e escolha **Private**. A cópia é independente e ninguém de fora vê o que você preencher.
 
 ---
 
