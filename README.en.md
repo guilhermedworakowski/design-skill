@@ -351,7 +351,7 @@ Other sections worth adding as the product grows: **Components**, **Interaction 
 cd design-skill && zip -r design-en.zip design-en
 ```
 
-> 🔒 **Confidential patterns? Don't publish your filled-in `patterns.md`.** On GitHub, a fork of a public repository is **always public**. Keep the edited file on your computer only, or make a private copy: click **Use this template → Create a new repository** at the top of this repository and pick **Private**. The copy is independent, and no one outside can see what you fill in.
+> 🔒 **Confidential patterns? Don't publish your filled-in `patterns.md`.** On GitHub, a fork of a public repository is **always public**. Keep the edited file on your computer only, or make a private copy: sign in to GitHub (the button only shows up when you're signed in), click **Use this template → Create a new repository** at the top of this repository and pick **Private**. The copy is independent, and no one outside can see what you fill in.
 
 ---
 

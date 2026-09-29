@@ -351,7 +351,7 @@ Outras seções que valem a pena adicionar conforme o produto cresce: **Componen
 cd design-skill && zip -r design-pt.zip design-pt
 ```
 
-> 🔒 **Padrões confidenciais? Não publique o seu `patterns.md` preenchido.** No GitHub, um fork de repositório público é **sempre público**. Guarde o arquivo editado só no seu computador ou crie uma cópia privada: clique em **Use this template → Create a new repository** no topo deste repositório e escolha **Private**. A cópia é independente e ninguém de fora vê o que você preencher.
+> 🔒 **Padrões confidenciais? Não publique o seu `patterns.md` preenchido.** No GitHub, um fork de repositório público é **sempre público**. Guarde o arquivo editado só no seu computador ou crie uma cópia privada: entre na sua conta do GitHub (o botão só aparece para quem está logado), clique em **Use this template → Create a new repository** no topo deste repositório e escolha **Private**. A cópia é independente e ninguém de fora vê o que você preencher.
 
 ---
 
