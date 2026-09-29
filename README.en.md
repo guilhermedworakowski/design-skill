@@ -295,7 +295,7 @@ flowchart LR
 
 ### 📝 What to fill in
 
-Open [`design-en/references/patterns.md`](design-en/references/patterns.md) and replace everything in `[brackets]`:
+The file lives at `references/patterns.md`, inside the skill folder ([see the template](design-en/references/patterns.md)). Replace everything in `[brackets]`. The step-by-step to open, edit and reinstall it is right below, in [How to edit and update the skill](#-how-to-edit-and-update-the-skill).
 
 | # | Section | What to add |
 |:---:|---|---|
@@ -328,17 +328,25 @@ Example:
 
 Other sections worth adding as the product grows: **Components**, **Interaction patterns** and **Visual business rules**.
 
-### 🔄 After editing, update the skill
+### 🔄 How to edit and update the skill
 
-**In Claude Code:** edit the file directly at `~/.claude/skills/design-en/references/patterns.md`. It applies from the next conversation.
+**Installed through Claude.ai or Claude Desktop (no terminal):**
 
-**In Claude.ai or Claude Desktop:** build a new package and upload it again.
+1. Download [`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill) again.
+2. Rename the file to `design-en.zip` and double-click it (on Windows: right-click → **Extract All**). You get a `design-en` folder.
+3. Open `design-en/references/patterns.md` in a text editor (TextEdit, Notepad or VS Code), fill it in and save. Keep the `.md` extension.
+4. Zip the `design-en` **folder** again. On Mac: right-click → **Compress "design-en"**. On Windows: right-click → **Send to → Compressed (zipped) folder**. You get `design-en.zip`.
+5. In Claude, under **Customize → Skills**, open `design-en`, click **⋯ → Delete** and upload the new `design-en.zip` with **+**, just like the install.
+
+> ⚠️ Zip the whole `design-en` folder, not the files inside it. Claude looks for `SKILL.md` inside the folder.
+
+**Using Claude Code:** edit the file directly at `~/.claude/skills/design-en/references/patterns.md`. It applies from the next conversation.
+
+**Cloned the repository and prefer the terminal:**
 
 ```bash
-cd design-skill && zip -r design-en.skill design-en
+cd design-skill && zip -r design-en.zip design-en
 ```
-
-Then, in **Settings → Capabilities → Skills**, remove the old version and upload the new `design-en.skill`.
 
 > 🔒 **Confidential patterns? Don't publish your filled-in `patterns.md`.** On GitHub, a fork of a public repository is **always public**. Keep the edited file on your computer only, or make a private copy: click **Use this template → Create a new repository** at the top of this repository and pick **Private**. The copy is independent, and no one outside can see what you fill in.
 

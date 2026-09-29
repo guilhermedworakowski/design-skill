@@ -295,7 +295,7 @@ flowchart LR
 
 ### 📝 O que preencher
 
-Abra [`design-pt/references/patterns.md`](design-pt/references/patterns.md) e troque tudo que está entre `[colchetes]`:
+O arquivo fica em `references/patterns.md`, dentro da pasta da skill ([veja o modelo](design-pt/references/patterns.md)). Troque tudo que está entre `[colchetes]`. O passo a passo para abrir, editar e reinstalar está logo abaixo, em [Como editar e atualizar a skill](#-como-editar-e-atualizar-a-skill).
 
 | # | Seção | O que colocar |
 |:---:|---|---|
@@ -328,17 +328,25 @@ Exemplo:
 
 Outras seções que valem a pena adicionar conforme o produto cresce: **Componentes**, **Padrões de interação** e **Regras de negócio visuais**.
 
-### 🔄 Depois de editar, atualize a skill
+### 🔄 Como editar e atualizar a skill
 
-**No Claude Code:** edite o arquivo direto em `~/.claude/skills/design-pt/references/patterns.md`. Vale na próxima conversa.
+**Instalou pelo Claude.ai ou Claude Desktop (sem terminal):**
 
-**No Claude.ai ou Claude Desktop:** gere um pacote novo e carregue de novo.
+1. Baixe de novo o [`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill).
+2. Renomeie o arquivo para `design-pt.zip` e abra com dois cliques (no Windows: botão direito → **Extrair tudo**). Aparece a pasta `design-pt`.
+3. Abra `design-pt/references/patterns.md` num editor de texto (TextEdit, Bloco de Notas ou VS Code), preencha e salve. Mantenha a extensão `.md`.
+4. Compacte a **pasta** `design-pt` de novo. No Mac: botão direito → **Comprimir "design-pt"**. No Windows: botão direito → **Enviar para → Pasta compactada**. O resultado é o `design-pt.zip`.
+5. No Claude, em **Personalizar → Skills** (*Customize → Skills*), abra a `design-pt`, clique em **⋯ → Excluir** (*Delete*) e carregue o novo `design-pt.zip` pelo **+**, como na instalação.
+
+> ⚠️ Compacte a pasta `design-pt` inteira, não os arquivos de dentro dela. O Claude procura o `SKILL.md` dentro da pasta.
+
+**Usa o Claude Code:** edite direto em `~/.claude/skills/design-pt/references/patterns.md`. Vale a partir da próxima conversa.
+
+**Clonou o repositório e prefere o terminal:**
 
 ```bash
-cd design-skill && zip -r design-pt.skill design-pt
+cd design-skill && zip -r design-pt.zip design-pt
 ```
-
-Depois, em **Configurações → Capacidades → Skills**, remova a versão antiga e carregue o novo `design-pt.skill`.
 
 > 🔒 **Padrões confidenciais? Não publique o seu `patterns.md` preenchido.** No GitHub, um fork de repositório público é **sempre público**. Guarde o arquivo editado só no seu computador ou crie uma cópia privada: clique em **Use this template → Create a new repository** no topo deste repositório e escolha **Private**. A cópia é independente e ninguém de fora vê o que você preencher.
 
