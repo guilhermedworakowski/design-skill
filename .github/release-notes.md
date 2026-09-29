@@ -8,7 +8,10 @@
 
 > ⚠️ **Não baixe o "Source code"**: ele é o repositório inteiro, não a skill. · **Don't download "Source code"**: it's the whole repository, not the skill.
 
-🔐 Confira a integridade com o `SHA256SUMS.txt` · Check integrity with `SHA256SUMS.txt`: `shasum -a 256 -c SHA256SUMS.txt`
+🔐 **Confira a integridade · Check integrity** (na pasta do download, junto com o `SHA256SUMS.txt` · in the download folder, next to `SHA256SUMS.txt`):
+
+- **Mac / Linux:** `shasum -a 256 -c --ignore-missing SHA256SUMS.txt` → `OK`
+- **Windows (PowerShell):** `Get-FileHash design-pt.skill` → compare com a linha do arquivo no `SHA256SUMS.txt` · compare it with the file's line in `SHA256SUMS.txt`
 
 📖 Guia completo · Full guide: [Português](https://github.com/guilhermedworakowski/design-skill/blob/main/README.pt.md) · [English](https://github.com/guilhermedworakowski/design-skill/blob/main/README.en.md)
 
