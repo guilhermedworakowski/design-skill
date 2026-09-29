@@ -284,13 +284,16 @@ Escreva normalmente. A skill identifica o agente sozinha.
 Sem o `patterns.md` preenchido, a skill funciona bem, mas usa tokens genéricos (ex.: `color-action-primary`, `spacing-md`) e **avisa quais padrões ainda faltam definir**. Com ele preenchido, **cada tela, fluxo e texto sai com a cara da sua marca**, porque os agentes tratam esse arquivo como fonte da verdade.
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph ANTES["❌ patterns.md vazio"]
+        direction LR
         A1["Tokens genéricos"] --> A2["Tom de voz neutro"] --> A3["Você adapta<br/>depois"]
     end
     subgraph DEPOIS["✅ patterns.md preenchido"]
+        direction LR
         B1["Tokens da marca"] --> B2["Tom de voz da marca"] --> B3["Entrega pronta<br/>para usar"]
     end
+    ANTES ~~~ DEPOIS
 ```
 
 ### 📝 O que preencher
