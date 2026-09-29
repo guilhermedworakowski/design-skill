@@ -417,6 +417,17 @@ A template for you to fill in. See [Make the skill even more powerful](#-make-th
 
 Suggestions, fixes and new frameworks are welcome. Open an **issue** or send a **pull request**. If you change one version's content, remember to mirror the change in the other (`design-en` ↔ `design-pt`).
 
+**Commit format:** use [Conventional Commits](https://www.conventionalcommits.org/) as `type(scope): description`, for both commits and the PR title.
+
+| Type | When to use it | Example |
+|---|---|---|
+| `feat` | A new skill capability | `feat(strategist): add North Star Metric framework` |
+| `fix` | A content or behavior fix | `fix(researcher): fix the clarifying-question limit` |
+| `docs` | Documentation only (READMEs, SECURITY) | `docs(readme): detail the Claude Code install` |
+| `ci` | GitHub Actions workflows | `ci(release): generate package checksums` |
+| `chore` | Maintenance that doesn't change the skill | `chore: update CODEOWNERS` |
+| `refactor` | Reorganizes without changing behavior | `refactor(references): split frameworks.md by agent` |
+
 > ⚠️ **Don't change the `.skill` files in your PR.** Only change the `design-en/` and `design-pt/` folders. The maintainer builds the `.skill` packages, because they're binary and don't show up in the diff. An automated check rejects any `.skill` that differs from its matching folder.
 
 ---
