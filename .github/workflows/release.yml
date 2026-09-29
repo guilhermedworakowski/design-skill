@@ -1,0 +1,39 @@
+name: Publicar release
+
+# Gera os pacotes .skill a partir das pastas e publica uma Release a cada tag vX.Y.Z.
+# Builds the .skill packages from the folders and publishes a Release for every vX.Y.Z tag.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Gerar pacotes .skill
+        run: |
+          set -euo pipefail
+          for pacote in design-pt design-en; do
+            test -f "$pacote/SKILL.md"
+            zip -r -X -q "$pacote.skill" "$pacote" -x '*.DS_Store'
+            echo "📦 $pacote.skill"
+            unzip -l "$pacote.skill"
+          done
+          sha256sum design-pt.skill design-en.skill > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Publicar release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" design-pt.skill design-en.skill SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" --title "$TAG" --generate-notes --verify-tag
