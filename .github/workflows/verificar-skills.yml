@@ -1,7 +1,9 @@
-name: Verificar pacotes .skill
+name: Verificar skills
 
-# Garante que cada .skill tem exatamente o mesmo conteúdo da pasta correspondente.
-# Ensures each .skill has exactly the same content as its matching folder.
+# Garante que as skills estão íntegras e que nenhum pacote .skill foi versionado.
+# Os pacotes são gerados só pelo workflow de release, a partir das pastas.
+# Ensures the skills are intact and that no .skill package was committed.
+# Packages are built only by the release workflow, from the folders.
 
 on:
   pull_request:
@@ -19,23 +21,31 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Comparar .skill com as pastas
+      - name: Bloquear pacotes .skill no repositório
+        run: |
+          set -euo pipefail
+          binarios="$(git ls-files '*.skill' '*.zip')"
+          if [ -n "$binarios" ]; then
+            for f in $binarios; do
+              echo "::error file=$f::Pacotes não entram no repositório. Eles são gerados pelo workflow de release a partir das pastas."
+            done
+            exit 1
+          fi
+          echo "✅ Nenhum pacote versionado"
+
+      - name: Conferir estrutura das skills
         run: |
           set -euo pipefail
           falhou=0
           for pacote in design-pt design-en; do
-            tmp="$(mktemp -d)"
-            unzip -q "$pacote.skill" -d "$tmp"
-            if diff -r "$tmp/$pacote" "$pacote"; then
-              echo "✅ $pacote.skill confere com $pacote/"
-            else
-              echo "::error file=$pacote.skill::$pacote.skill é diferente da pasta $pacote/. Gere o pacote de novo a partir da pasta."
-              falhou=1
-            fi
-            extras="$(ls -A "$tmp" | grep -vx "$pacote" || true)"
-            if [ -n "$extras" ]; then
-              echo "::error file=$pacote.skill::$pacote.skill contém arquivos fora da pasta $pacote/: $extras"
+            if ! grep -qx "name: \"$pacote\"" "$pacote/SKILL.md"; then
+              echo "::error file=$pacote/SKILL.md::O campo name do SKILL.md precisa ser \"$pacote\"."
               falhou=1
             fi
           done
+          if ! diff <(cd design-pt && find . -type f | sort) <(cd design-en && find . -type f | sort); then
+            echo "::error::design-pt/ e design-en/ precisam ter os mesmos arquivos. Reflita a mudança nas duas versões."
+            falhou=1
+          fi
+          [ $falhou -eq 0 ] && echo "✅ design-pt/ e design-en/ íntegras e com os mesmos arquivos"
           exit $falhou
