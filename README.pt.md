@@ -417,6 +417,17 @@ Modelo para você preencher. Veja [Deixe a skill ainda mais poderosa](#-deixe-a-
 
 Sugestões, correções e novos frameworks são bem-vindos. Abra uma **issue** ou mande um **pull request**. Se mudar o conteúdo de uma versão, lembre de refletir a mudança na outra (`design-pt` ↔ `design-en`).
 
+**Padrão de commits:** use [Conventional Commits](https://www.conventionalcommits.org/pt-br/) no formato `tipo(escopo): descrição`, tanto nos commits quanto no título do PR.
+
+| Tipo | Quando usar | Exemplo |
+|---|---|---|
+| `feat` | Nova capacidade na skill | `feat(strategist): adiciona framework North Star Metric` |
+| `fix` | Correção de conteúdo ou comportamento | `fix(researcher): corrige limite de perguntas de clarificação` |
+| `docs` | Só documentação (READMEs, SECURITY) | `docs(readme): detalha instalação no Claude Code` |
+| `ci` | Workflows do GitHub Actions | `ci(release): gera checksums dos pacotes` |
+| `chore` | Manutenção que não muda a skill | `chore: atualiza CODEOWNERS` |
+| `refactor` | Reorganiza sem mudar o comportamento | `refactor(references): divide frameworks.md por agente` |
+
 > ⚠️ **Não altere os arquivos `.skill` no seu PR.** Mude só as pastas `design-pt/` e `design-en/`. Os pacotes `.skill` são gerados pelo mantenedor, porque são binários e não aparecem no diff. Uma verificação automática recusa qualquer `.skill` diferente da pasta correspondente.
 
 ---
