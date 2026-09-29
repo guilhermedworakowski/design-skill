@@ -179,6 +179,7 @@ Constrói telas, componentes e protótipos usando os **tokens, a tipografia e o 
 
 ```
 design-skill/
+├── 📄 README.md                    ← página inicial (escolha de idioma)
 ├── 📄 README.pt.md                 ← você está aqui
 ├── 📄 README.en.md                 ← versão em inglês
 ├── 📄 LICENSE                      ← MIT

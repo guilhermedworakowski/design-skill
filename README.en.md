@@ -179,6 +179,7 @@ Builds screens, components and prototypes using **your brand's tokens, typograph
 
 ```
 design-skill/
+├── 📄 README.md                    ← landing page (language picker)
 ├── 📄 README.en.md                 ← you are here
 ├── 📄 README.pt.md                 ← Portuguese version
 ├── 📄 LICENSE                      ← MIT
