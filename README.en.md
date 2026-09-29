@@ -215,12 +215,16 @@ design-skill/
 
 ### Option A: Claude.ai or Claude Desktop
 
-1. Download **[`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill)** or **[`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill)**. The links always point to the latest version. Older ones are on the **[Releases](https://github.com/guilhermedworakowski/design-skill/releases)** page.
-2. In Claude, go to **Settings → Capabilities** and make sure **Code execution and file creation** is turned on (skills need it).
-3. In the **Skills** section, click **Upload skill** and pick the `.skill` file.
+1. Download **[`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill)** or **[`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill)**. The links always download the latest version.
+2. In Claude, go to **Settings → Capabilities** and make sure **Code execution and file creation** is turned on. Skills need it.
+3. Go to **Customize → Skills**, click **+**, then **Create skill** and **Upload a skill**. Pick the file you downloaded.
 4. Check that the skill shows up in the list and is turned on.
 
-> ℹ️ Menu names may vary slightly between app versions. Skills are available on Claude's paid plans.
+> ℹ️ Steps follow the [Claude Help Center](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+>
+> - **Plans:** skills work on every plan, including Free. On Team and Enterprise, an admin needs to enable skills for the organization.
+> - **File rejected?** If Claude doesn't accept the `.skill`, rename it to `.zip`. It's the same file.
+> - **On the [Releases](https://github.com/guilhermedworakowski/design-skill/releases) page:** download the `.skill`. The "Source code" files are the whole repository, not the skill.
 
 ### Option B: Claude Code
 

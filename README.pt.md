@@ -215,12 +215,16 @@ design-skill/
 
 ### Opção A: Claude.ai ou Claude Desktop
 
-1. Baixe **[`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill)** ou **[`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill)**. Os links sempre apontam para a versão mais recente. As anteriores ficam na página de **[Releases](https://github.com/guilhermedworakowski/design-skill/releases)**.
-2. No Claude, vá em **Configurações → Capacidades** e confirme que **Execução de código e criação de arquivos** está ativada (as skills precisam disso).
-3. Na seção **Skills**, clique em **Carregar skill** e selecione o arquivo `.skill`.
+1. Baixe **[`design-pt.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-pt.skill)** ou **[`design-en.skill`](https://github.com/guilhermedworakowski/design-skill/releases/latest/download/design-en.skill)**. Os links sempre baixam a versão mais recente.
+2. No Claude, vá em **Configurações → Capacidades** (*Settings → Capabilities*) e confirme que **Execução de código e criação de arquivos** (*Code execution and file creation*) está ativada. As skills precisam disso.
+3. Vá em **Personalizar → Skills** (*Customize → Skills*), clique no **+**, depois em **Criar skill** (*Create skill*) e em **Carregar uma skill** (*Upload a skill*). Selecione o arquivo que você baixou.
 4. Confirme que a skill aparece na lista e está ativada.
 
-> ℹ️ Os nomes dos menus podem variar um pouco entre versões do app. Skills estão disponíveis nos planos pagos do Claude.
+> ℹ️ Os nomes entre parênteses são os da interface em inglês, conforme a [central de ajuda do Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Na tradução para o português, eles podem variar um pouco.
+>
+> - **Planos:** skills funcionam em todos os planos, inclusive no gratuito. Nos planos Team e Enterprise, um administrador precisa liberar as skills para a organização.
+> - **Arquivo recusado?** Se o Claude não aceitar o `.skill`, renomeie para `.zip`. É o mesmo arquivo.
+> - **Na página de [Releases](https://github.com/guilhermedworakowski/design-skill/releases):** baixe o `.skill`. Os arquivos "Source code" são o repositório inteiro, não a skill.
 
 ### Opção B: Claude Code
 
